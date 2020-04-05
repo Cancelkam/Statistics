@@ -10,10 +10,7 @@ public class StatsService {
     }
 
     public static int averagecalc(int[] purchases) {
-        int sum=0;
-        for (int purchase : purchases) {
-            sum+=purchase;
-        }
+        int sum = sumcalc(purchases);
         int average = sum / purchases.length;
         return average;
     }
@@ -21,8 +18,8 @@ public class StatsService {
     public static int maxcalc(int[] purchases) {
         int currentMax = purchases[0];
         for (int purchase : purchases) {
-        if( currentMax < purchase) {
-        currentMax = purchase;
+            if( currentMax < purchase) {
+            currentMax = purchase;
             }
         }
         return currentMax;
@@ -55,12 +52,7 @@ public class StatsService {
     }
 
     public static int highaveragecalc(int[] purchases) {
-        int sum=0;
-        for (int purchase : purchases) {
-            sum+=purchase;
-        }
-        int average = sum / purchases.length;
-
+        int average = averagecalc(purchases);
         int HighMonth = 0;
         for (int purchase : purchases) {
             if( purchase >= average) {
