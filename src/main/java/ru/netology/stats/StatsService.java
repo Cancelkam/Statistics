@@ -36,12 +36,7 @@ public class StatsService {
     }
 
     public static int lowaveragecalc(int[] purchases) {
-        int sum=0;
-        for (int purchase : purchases) {
-            sum+=purchase;
-        }
-        int average = sum / purchases.length;
-
+        int average = averagecalc(purchases);
         int LowMonth = 0;
         for (int purchase : purchases) {
             if( purchase < average) {
